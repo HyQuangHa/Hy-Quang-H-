@@ -1,27 +1,32 @@
-package hyquangha_project;
 import java.util.Scanner;
-public class Bai3
-{
-	public static void main(String[] args) 
-	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Nhap ten:");
-		String ten = sc.nextLine();
-		System.out.println("Nhap nam sinh:");
-		int namsinh = sc.nextInt();
-		int tuoi = 2023 - namsinh;
-		 
-		if(tuoi<16)
-		{
-			System.out.println("Ban " +ten+ " o do tuoi thanh nien");
-		}
-		else if(tuoi >=18)
-		{
-			System.out.println("Ban " +ten+ " da gia");
-		}
-		else
-		{
-			System.out.println("Ban " +ten+ " o do tuoi truong thanh");
-		}
-	}
+import java.util.LinkedList;
+import java.util.Queue;
+public class Bai3 {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhap so phan tu cua day: ");
+        int n = scanner.nextInt();
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        System.out.println("Nhap day so nguyen: ");
+        for (int i = 0; i < n; i++) {
+            int number = scanner.nextInt();
+            queue.add(number);
+        }
+
+        System.out.print("Nhap so phan tu muon lay tu Queue: ");
+        int m = scanner.nextInt();
+
+        System.out.println("Cac phan tu trong Queue: ");
+        for (int i = 0; i < m; i++) {
+            if (queue.isEmpty()) {
+                System.out.println("Queue da het phan tu.");
+                break;
+            }
+            int element = queue.poll();
+            System.out.println(element);
+        }
+    }
 }
